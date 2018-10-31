@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            id="org.eclipse.bayou.plugin.java"
+            name="org.eclipse.bayou.plugin.java"
+            base-type="org.eclipse.core.runtime.text"
+            file-extensions="java">
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editorContentTypeBinding
+            contentTypeId="org.eclipse.bayou.plugin.java"
+            editorId="org.eclipse.ui.genericeditor.GenericEditor">
+      </editorContentTypeBinding>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.presentationReconcilers">
+      <presentationReconciler
+            class="org.eclipse.bayou.JavaPresentationReconciler"
+            contentType="org.eclipse.bayou.plugin.java">
+      </presentationReconciler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.hoverProviders">
+      <hoverProvider
+            class="org.eclipse.bayou.JavaHoverProvider"
+            contentType="org.eclipse.bayou.plugin.java">
+      </hoverProvider>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.contentAssistProcessors">
+      <contentAssistProcessor
+            class="org.eclipse.bayou.JavaContentAssistProcessor"
+            contentType="org.eclipse.bayou.plugin.java">
+      </contentAssistProcessor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.autoEditStrategies">
+      <autoEditStrategy
+            class="org.eclipse.bayou.JavaAutoEditStrategy"
+            contentType="org.eclipse.bayou.plugin.java">
+      </autoEditStrategy>
+   </extension>
+   <extension
+         point="org.eclipse.ui.genericeditor.reconcilers">
+      <reconciler
+            class="org.eclipse.bayou.JavaReconciler"
+            contentType="org.eclipse.bayou.plugin.java">
+      </reconciler>
+   </extension>
+   <extension
+         point="org.eclipse.core.filebuffers.documentSetup">
+      <participant
+            class="org.eclipse.bayou.ValidatorDocumentSetupParticipant"
+            contentTypeId="org.eclipse.bayou.plugin.java"
+            extensions="java">
+      </participant>
+   </extension>
+
+</plugin>
